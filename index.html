@@ -84,11 +84,16 @@
             gap: 25px;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--primary);
-            white-space: nowrap;
+       .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
         }
 
             .logo span {
@@ -809,9 +814,9 @@
     <header>
         <div class="container navbar">
 
-            <a href="#" class="logo">
-                Fresh<span>Cart</span>
-            </a>
+           <a href="#" class="logo">
+  <img src="images/logo.png" alt="Vayudoot Store Logo">
+</a>
 
             <div class="search-box">
                 <input type="text"
