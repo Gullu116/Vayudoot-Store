@@ -1,21 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FreshCart - Fresh Groceries Delivered to Your Door</title>
-
-    <meta name="description" content="Shop fresh fruits, vegetables, dairy, snacks, beverages and everyday essentials online. Enjoy great prices, daily offers and fast home delivery.">
-
-    <meta name="keywords" content="online grocery, grocery delivery, fresh vegetables, fresh fruits, online supermarket, grocery shopping">
+    <title>Vayudoot Store - Fresh Groceries Delivered to Your Door</title>
+    <meta name="description" content="Shop fresh fruits, vegetables, dairy, snacks, beverages and everyday essentials online with Vayudoot Store. Enjoy great prices, daily offers and convenient home delivery.">
+    <meta name="keywords" content="Vayudoot Store, online grocery, grocery delivery, fresh vegetables, fresh fruits, online supermarket, grocery shopping, groceries online">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary: #2e7d32;
@@ -27,7 +21,10 @@
             --light: #f7f9f7;
             --white: #ffffff;
             --border: #e5e7eb;
+            --danger: #e53935;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -36,28 +33,15 @@
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        button,
-        input {
-            font-family: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
+        img { width: 100%; display: block; }
+        button, input { font-family: inherit; }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
         }
-
-        /* TOP BAR */
 
         .top-bar {
             background: var(--primary-dark);
@@ -66,8 +50,6 @@
             padding: 8px;
             font-size: 14px;
         }
-
-        /* HEADER */
 
         header {
             background: white;
@@ -84,49 +66,53 @@
             gap: 25px;
         }
 
-       .logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  width: 160px;
-  height: auto;
-  display: block;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
 
-            .logo span {
-                color: var(--yellow);
-            }
+        .logo img {
+            width: 160px;
+            max-width: 160px;
+            height: auto;
+            max-height: 60px;
+            object-fit: contain;
+            display: block;
+        }
 
         .search-box {
             flex: 1;
             position: relative;
         }
 
-            .search-box input {
-                width: 100%;
-                padding: 13px 45px 13px 18px;
-                border: 1px solid var(--border);
-                border-radius: 30px;
-                outline: none;
-                font-size: 15px;
-                background: #f8faf8;
-            }
+        .search-box input {
+            width: 100%;
+            padding: 13px 45px 13px 18px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            outline: none;
+            font-size: 15px;
+            background: #f8faf8;
+        }
 
-            .search-box button {
-                position: absolute;
-                right: 5px;
-                top: 5px;
-                width: 38px;
-                height: 38px;
-                border: none;
-                border-radius: 50%;
-                background: var(--primary);
-                color: white;
-                cursor: pointer;
-            }
+        .search-box input:focus {
+            border-color: var(--primary);
+            background: white;
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+        }
 
         nav {
             display: flex;
@@ -134,14 +120,12 @@
             align-items: center;
         }
 
-            nav a {
-                font-size: 14px;
-                font-weight: 600;
-            }
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+        }
 
-                nav a:hover {
-                    color: var(--primary);
-                }
+        nav a:hover { color: var(--primary); }
 
         .header-icons {
             display: flex;
@@ -163,7 +147,7 @@
             right: -8px;
             width: 20px;
             height: 20px;
-            background: #e53935;
+            background: var(--danger);
             color: white;
             border-radius: 50%;
             font-size: 11px;
@@ -180,18 +164,32 @@
             cursor: pointer;
         }
 
-        /* HERO */
+        .mobile-nav {
+            display: none;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 15px 5%;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav.active { display: block; }
 
         .hero {
-            background: linear-gradient(90deg, rgba(234,247,236,0.98), rgba(234,247,236,0.75)), url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80") center/cover;
+            background:
+                linear-gradient(90deg, rgba(234,247,236,0.98), rgba(234,247,236,0.75)),
+                url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
             min-height: 560px;
             display: flex;
             align-items: center;
         }
 
-        .hero-content {
-            max-width: 600px;
-        }
+        .hero-content { max-width: 600px; }
 
         .hero-badge {
             display: inline-block;
@@ -208,9 +206,7 @@
             margin-bottom: 20px;
         }
 
-            .hero h1 span {
-                color: var(--primary);
-            }
+        .hero h1 span { color: var(--primary); }
 
         .hero p {
             color: var(--gray);
@@ -234,10 +230,10 @@
             color: white;
         }
 
-            .btn-primary:hover {
-                background: var(--primary-dark);
-                transform: translateY(-2px);
-            }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
 
         .btn-light {
             background: white;
@@ -245,27 +241,19 @@
             margin-left: 10px;
         }
 
-        /* SECTION */
-
-        section {
-            padding: 75px 0;
-        }
+        section { padding: 75px 0; }
 
         .section-heading {
             text-align: center;
             margin-bottom: 45px;
         }
 
-            .section-heading h2 {
-                font-size: 36px;
-                margin-bottom: 10px;
-            }
+        .section-heading h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-            .section-heading p {
-                color: var(--gray);
-            }
-
-        /* CATEGORIES */
+        .section-heading p { color: var(--gray); }
 
         .categories {
             display: grid;
@@ -282,24 +270,20 @@
             cursor: pointer;
         }
 
-            .category:hover {
-                transform: translateY(-5px);
-                background: var(--light-green);
-            }
+        .category:hover {
+            transform: translateY(-5px);
+            background: var(--light-green);
+        }
 
-            .category img {
-                width: 85px;
-                height: 85px;
-                object-fit: cover;
-                border-radius: 50%;
-                margin: auto auto 12px;
-            }
+        .category img {
+            width: 85px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: auto auto 12px;
+        }
 
-            .category h4 {
-                font-size: 14px;
-            }
-
-        /* PROMO */
+        .category h4 { font-size: 14px; }
 
         .promo {
             background: var(--primary);
@@ -313,17 +297,15 @@
             overflow: hidden;
         }
 
-            .promo h2 {
-                font-size: 40px;
-                margin-bottom: 10px;
-            }
+        .promo h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-            .promo p {
-                opacity: 0.9;
-                margin-bottom: 20px;
-            }
-
-        /* PRODUCTS */
+        .promo p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
 
         .products {
             display: grid;
@@ -340,10 +322,10 @@
             position: relative;
         }
 
-            .product-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
 
         .product-image {
             height: 220px;
@@ -351,21 +333,22 @@
             background: #f5f7f5;
         }
 
-            .product-image img {
-                height: 100%;
-                object-fit: cover;
-            }
+        .product-image img {
+            height: 100%;
+            object-fit: cover;
+        }
 
         .discount {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: #e53935;
+            background: var(--danger);
             color: white;
             padding: 5px 9px;
             border-radius: 5px;
             font-size: 12px;
             font-weight: bold;
+            z-index: 2;
         }
 
         .wishlist {
@@ -379,16 +362,15 @@
             border-radius: 50%;
             cursor: pointer;
             font-size: 18px;
+            z-index: 2;
         }
 
-        .product-info {
-            padding: 18px;
-        }
+        .product-info { padding: 18px; }
 
-            .product-info h3 {
-                font-size: 17px;
-                margin-bottom: 5px;
-            }
+        .product-info h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
 
         .product-brand {
             font-size: 13px;
@@ -401,9 +383,7 @@
             margin: 8px 0;
         }
 
-        .price {
-            margin-bottom: 15px;
-        }
+        .price { margin-bottom: 15px; }
 
         .current-price {
             font-size: 20px;
@@ -429,15 +409,9 @@
             font-weight: bold;
         }
 
-            .add-cart:hover {
-                background: var(--primary-dark);
-            }
+        .add-cart:hover { background: var(--primary-dark); }
 
-        /* FEATURES */
-
-        .features {
-            background: var(--light);
-        }
+        .features { background: var(--light); }
 
         .feature-grid {
             display: grid;
@@ -463,18 +437,13 @@
             margin-top: 8px;
         }
 
-        /* HOW IT WORKS */
-
         .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
         }
 
-        .step {
-            text-align: center;
-            position: relative;
-        }
+        .step { text-align: center; position: relative; }
 
         .step-number {
             width: 60px;
@@ -495,26 +464,23 @@
             font-size: 14px;
         }
 
-        /* DEAL */
-
         .deal {
-            background: linear-gradient(90deg, rgba(27,94,32,0.92), rgba(27,94,32,0.55)), url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80") center/cover;
+            background:
+                linear-gradient(90deg, rgba(27,94,32,0.92), rgba(27,94,32,0.55)),
+                url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
             color: white;
             border-radius: 20px;
             padding: 70px 50px;
             text-align: center;
         }
 
-            .deal h2 {
-                font-size: 42px;
-                margin-bottom: 10px;
-            }
+        .deal h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-            .deal p {
-                margin-bottom: 25px;
-            }
-
-        /* TESTIMONIALS */
+        .deal p { margin-bottom: 25px; }
 
         .testimonials {
             display: grid;
@@ -528,21 +494,17 @@
             border-radius: 15px;
         }
 
-            .testimonial .stars {
-                color: #f59e0b;
-                margin-bottom: 15px;
-            }
-
-            .testimonial p {
-                color: var(--gray);
-                margin-bottom: 20px;
-            }
-
-        .customer {
-            font-weight: bold;
+        .testimonial .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
         }
 
-        /* NEWSLETTER */
+        .testimonial p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .customer { font-weight: bold; }
 
         .newsletter {
             background: var(--light-green);
@@ -551,15 +513,15 @@
             padding: 60px 20px;
         }
 
-            .newsletter h2 {
-                font-size: 35px;
-                margin-bottom: 10px;
-            }
+        .newsletter h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
 
-            .newsletter p {
-                color: var(--gray);
-                margin-bottom: 25px;
-            }
+        .newsletter p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
 
         .newsletter-form {
             max-width: 550px;
@@ -568,15 +530,13 @@
             gap: 10px;
         }
 
-            .newsletter-form input {
-                flex: 1;
-                border: 1px solid var(--border);
-                padding: 14px 18px;
-                border-radius: 8px;
-                outline: none;
-            }
-
-        /* FOOTER */
+        .newsletter-form input {
+            flex: 1;
+            border: 1px solid var(--border);
+            padding: 14px 18px;
+            border-radius: 8px;
+            outline: none;
+        }
 
         footer {
             background: #102512;
@@ -591,15 +551,17 @@
         }
 
         .footer-logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #8bc34a;
             margin-bottom: 15px;
         }
 
-        .footer-column h4 {
-            margin-bottom: 15px;
+        .footer-logo img {
+            width: 160px;
+            max-height: 60px;
+            object-fit: contain;
+            object-position: left center;
         }
+
+        .footer-column h4 { margin-bottom: 15px; }
 
         .footer-column a {
             display: block;
@@ -608,9 +570,7 @@
             margin-bottom: 9px;
         }
 
-            .footer-column a:hover {
-                color: white;
-            }
+        .footer-column a:hover { color: white; }
 
         .footer-about {
             color: #cbd5cb;
@@ -625,8 +585,6 @@
             color: #aab5aa;
             font-size: 13px;
         }
-
-        /* CART PANEL */
 
         .cart-panel {
             position: fixed;
@@ -643,9 +601,7 @@
             overflow-y: auto;
         }
 
-            .cart-panel.active {
-                right: 0;
-            }
+        .cart-panel.active { right: 0; }
 
         .cart-header {
             display: flex;
@@ -669,20 +625,33 @@
             border-bottom: 1px solid var(--border);
         }
 
-            .cart-item img {
-                width: 60px;
-                height: 60px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
+        .cart-item-info { flex: 1; }
 
-        .cart-item-info {
-            flex: 1;
+        .cart-item-info h4 { font-size: 14px; }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 7px;
         }
 
-            .cart-item-info h4 {
-                font-size: 14px;
-            }
+        .quantity-controls button {
+            width: 25px;
+            height: 25px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .remove-item {
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: var(--danger);
+            font-size: 16px;
+        }
 
         .cart-total {
             margin-top: 20px;
@@ -697,13 +666,15 @@
             margin-top: 20px;
         }
 
-        /* RESPONSIVE */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--gray);
+            padding: 30px;
+        }
 
         @media (max-width: 1000px) {
-
-            nav {
-                display: none;
-            }
+            nav { display: none; }
 
             .categories {
                 grid-template-columns: repeat(4, 1fr);
@@ -722,32 +693,22 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .menu-btn {
-                display: block;
-            }
+            .menu-btn { display: block; }
         }
 
         @media (max-width: 650px) {
+            .navbar { gap: 10px; }
 
-            .navbar {
-                gap: 10px;
+            .logo img {
+                width: 110px;
+                max-height: 50px;
             }
 
-            .logo {
-                font-size: 21px;
-            }
+            .search-box { display: none; }
 
-            .search-box {
-                display: none;
-            }
+            .hero { min-height: 500px; }
 
-            .hero {
-                min-height: 500px;
-            }
-
-                .hero h1 {
-                    font-size: 42px;
-                }
+            .hero h1 { font-size: 42px; }
 
             .btn-light {
                 margin-left: 0;
@@ -774,55 +735,37 @@
                 display: block;
             }
 
-                .promo h2 {
-                    font-size: 30px;
-                }
+            .promo h2 { font-size: 30px; }
 
-            .deal {
-                padding: 50px 25px;
-            }
+            .deal { padding: 50px 25px; }
 
-                .deal h2 {
-                    font-size: 32px;
-                }
+            .deal h2 { font-size: 32px; }
 
-            .newsletter-form {
-                flex-direction: column;
-            }
+            .newsletter-form { flex-direction: column; }
 
-                .newsletter-form .btn {
-                    width: 100%;
-                }
+            .newsletter-form .btn { width: 100%; }
 
-            section {
-                padding: 55px 0;
-            }
+            section { padding: 55px 0; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
-
     <div class="top-bar">
-        🚚 Free delivery on orders over $50 | Fresh groceries delivered to your doorstep
+        🚚 Free delivery on orders over ₹499 | Fresh groceries delivered to your doorstep
     </div>
-
-    <!-- HEADER -->
 
     <header>
         <div class="container navbar">
 
-           <a href="#" class="logo">
-  <img src="images/logo.png" alt="Vayudoot Store Logo">
-</a>
+            <a href="#home" class="logo" aria-label="Vayudoot Store Home">
+                <img src="images/logo.png" alt="Vayudoot Store Logo">
+            </a>
 
             <div class="search-box">
-                <input type="text"
-                       id="searchInput"
-                       placeholder="Search for products, brands and more...">
-                <button>🔍</button>
+                <input type="text" id="searchInput" placeholder="Search for products, brands and more..." aria-label="Search products">
+                <button type="button" aria-label="Search">🔍</button>
             </div>
 
             <nav>
@@ -834,37 +777,30 @@
             </nav>
 
             <div class="header-icons">
+                <button class="icon-btn" type="button" aria-label="Account">👤</button>
 
-                <button class="icon-btn">
-                    👤
-                </button>
-
-                <button class="icon-btn" onclick="openCart()">
+                <button class="icon-btn" type="button" onclick="openCart()" aria-label="Shopping cart">
                     🛒
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
 
-                <button class="menu-btn">
-                    ☰
-                </button>
-
+                <button class="menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
             </div>
+        </div>
 
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home" onclick="closeMobileMenu()">Home</a>
+            <a href="#categories" onclick="closeMobileMenu()">Categories</a>
+            <a href="#products" onclick="closeMobileMenu()">Shop</a>
+            <a href="#offers" onclick="closeMobileMenu()">Offers</a>
+            <a href="#about" onclick="closeMobileMenu()">About</a>
         </div>
     </header>
 
-
-    <!-- HERO -->
-
     <section class="hero" id="home">
-
         <div class="container">
-
             <div class="hero-content">
-
-                <span class="hero-badge">
-                    🥬 Fresh Deals Every Day
-                </span>
+                <span class="hero-badge">🥬 Fresh Deals Every Day</span>
 
                 <h1>
                     Fresh Groceries,
@@ -873,949 +809,541 @@
                 </h1>
 
                 <p>
-                    Shop fresh fruits, vegetables, dairy, snacks, beverages
-                    and everyday essentials at great prices.
+                    Shop fresh fruits, vegetables, dairy, snacks, beverages and everyday essentials at great prices.
                 </p>
 
-                <a href="#products" class="btn btn-primary">
-                    Shop Now
-                </a>
-
-                <a href="#offers" class="btn btn-light">
-                    Explore Offers
-                </a>
-
+                <a href="#products" class="btn btn-primary">Shop Now</a>
+                <a href="#offers" class="btn btn-light">Explore Offers</a>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- CATEGORIES -->
-
     <section id="categories">
-
         <div class="container">
-
             <div class="section-heading">
-
                 <h2>Shop by Category</h2>
-
-                <p>
-                    Everything you need for your everyday grocery shopping.
-                </p>
-
+                <p>Everything you need for your everyday grocery shopping.</p>
             </div>
 
             <div class="categories">
-
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=300&q=80" alt="Fresh fruits">
                     <h4>Fruits</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=300&q=80" alt="Fresh vegetables">
                     <h4>Vegetables</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=300&q=80" alt="Dairy and eggs">
                     <h4>Dairy & Eggs</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80" alt="Rice and grains">
                     <h4>Rice & Grains</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80" alt="Bakery products">
                     <h4>Bakery</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1621939514649-280e2aa9f2e4?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1621939514649-280e2aa9f2e4?auto=format&fit=crop&w=300&q=80" alt="Snacks">
                     <h4>Snacks</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=300&q=80" alt="Beverages">
                     <h4>Beverages</h4>
                 </div>
 
                 <div class="category">
-                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80" alt="Personal care products">
                     <h4>Personal Care</h4>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
-    <!-- PROMO -->
 
     <section>
-
         <div class="container">
-
             <div class="promo">
-
                 <div>
-
                     <h2>Fresh Deals Every Day</h2>
-
-                    <p>
-                        Save more on your favorite grocery essentials.
-                        New offers added regularly.
-                    </p>
-
-                    <a href="#products" class="btn btn-light">
-                        Shop Deals
-                    </a>
-
+                    <p>Save more on your favorite grocery essentials. New offers added regularly.</p>
+                    <a href="#products" class="btn btn-light">Shop Deals</a>
                 </div>
 
-                <div style="font-size:100px;">
-                    🛒
-                </div>
-
+                <div style="font-size:100px;" aria-hidden="true">🛒</div>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- PRODUCTS -->
-
     <section id="products">
-
         <div class="container">
-
             <div class="section-heading">
-
                 <h2>Featured Products</h2>
-
-                <p>
-                    Fresh and quality products selected for your family.
-                </p>
-
+                <p>Fresh and quality products selected for your family.</p>
             </div>
 
             <div class="products" id="productGrid">
 
-
-                <!-- PRODUCT 1 -->
-
                 <div class="product-card" data-name="Organic Bananas">
-
                     <div class="product-image">
-
-                        <span class="discount">
-                            20% OFF
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80">
-
+                        <span class="discount">20% OFF</span>
+                        <button class="wishlist" type="button" aria-label="Add Organic Bananas to wishlist">♡</button>
+                        <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80" alt="Organic Bananas">
                     </div>
 
                     <div class="product-info">
-
                         <h3>Organic Bananas</h3>
-
-                        <div class="product-brand">
-                            Fresh Produce • 1 kg
-                        </div>
-
-                        <div class="rating">
-                            ★★★★★
-                        </div>
+                        <div class="product-brand">Fresh Produce • 1 kg</div>
+                        <div class="rating">★★★★★</div>
 
                         <div class="price">
-
-                            <span class="current-price">
-                                $2.99
-                            </span>
-
-                            <span class="old-price">
-                                $3.75
-                            </span>
-
+                            <span class="current-price">₹99</span>
+                            <span class="old-price">₹125</span>
                         </div>
 
-                        <button class="add-cart" onclick="addToCart('Organic Bananas', 2.99, this)">
+                        <button class="add-cart" type="button" onclick="addToCart('Organic Bananas', 99, this)">
                             Add to Cart
                         </button>
-
                     </div>
-
                 </div>
-
-
-                <!-- PRODUCT 2 -->
 
                 <div class="product-card" data-name="Fresh Tomatoes">
-
                     <div class="product-image">
-
-                        <span class="discount">
-                            15% OFF
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=600&q=80">
-
+                        <span class="discount">15% OFF</span>
+                        <button class="wishlist" type="button" aria-label="Add Fresh Tomatoes to wishlist">♡</button>
+                        <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=600&q=80" alt="Fresh Tomatoes">
                     </div>
 
                     <div class="product-info">
-
                         <h3>Fresh Tomatoes</h3>
-
-                        <div class="product-brand">
-                            Farm Fresh • 1 kg
-                        </div>
-
-                        <div class="rating">
-                            ★★★★★
-                        </div>
+                        <div class="product-brand">Farm Fresh • 1 kg</div>
+                        <div class="rating">★★★★★</div>
 
                         <div class="price">
-
-                            <span class="current-price">
-                                $2.49
-                            </span>
-
-                            <span class="old-price">
-                                $2.95
-                            </span>
-
+                            <span class="current-price">₹79</span>
+                            <span class="old-price">₹95</span>
                         </div>
 
-                        <button class="add-cart" onclick="addToCart('Fresh Tomatoes', 2.49, this)">
+                        <button class="add-cart" type="button" onclick="addToCart('Fresh Tomatoes', 79, this)">
                             Add to Cart
                         </button>
-
                     </div>
-
                 </div>
-
-
-                <!-- PRODUCT 3 -->
 
                 <div class="product-card" data-name="Fresh Milk">
-
                     <div class="product-image">
-
-                        <span class="discount">
-                            10% OFF
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80">
-
+                        <span class="discount">10% OFF</span>
+                        <button class="wishlist" type="button" aria-label="Add Fresh Milk to wishlist">♡</button>
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80" alt="Fresh Milk">
                     </div>
 
                     <div class="product-info">
-
                         <h3>Fresh Milk</h3>
-
-                        <div class="product-brand">
-                            Farm Dairy • 1 Gallon
-                        </div>
-
-                        <div class="rating">
-                            ★★★★★
-                        </div>
+                        <div class="product-brand">Farm Dairy • 1 Litre</div>
+                        <div class="rating">★★★★★</div>
 
                         <div class="price">
-
-                            <span class="current-price">
-                                $4.99
-                            </span>
-
-                            <span class="old-price">
-                                $5.50
-                            </span>
-
+                            <span class="current-price">₹65</span>
+                            <span class="old-price">₹72</span>
                         </div>
 
-                        <button class="add-cart" onclick="addToCart('Fresh Milk', 4.99, this)">
+                        <button class="add-cart" type="button" onclick="addToCart('Fresh Milk', 65, this)">
                             Add to Cart
                         </button>
-
                     </div>
-
                 </div>
-
-
-                <!-- PRODUCT 4 -->
 
                 <div class="product-card" data-name="Basmati Rice">
-
                     <div class="product-image">
-
-                        <span class="discount">
-                            25% OFF
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80">
-
+                        <span class="discount">25% OFF</span>
+                        <button class="wishlist" type="button" aria-label="Add Basmati Rice to wishlist">♡</button>
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Basmati Rice">
                     </div>
 
                     <div class="product-info">
-
                         <h3>Basmati Rice</h3>
-
-                        <div class="product-brand">
-                            Premium Quality • 5 lb
-                        </div>
-
-                        <div class="rating">
-                            ★★★★★
-                        </div>
+                        <div class="product-brand">Premium Quality • 5 kg</div>
+                        <div class="rating">★★★★★</div>
 
                         <div class="price">
-
-                            <span class="current-price">
-                                $8.99
-                            </span>
-
-                            <span class="old-price">
-                                $11.99
-                            </span>
-
+                            <span class="current-price">₹599</span>
+                            <span class="old-price">₹799</span>
                         </div>
 
-                        <button class="add-cart" onclick="addToCart('Basmati Rice', 8.99, this)">
+                        <button class="add-cart" type="button" onclick="addToCart('Basmati Rice', 599, this)">
                             Add to Cart
                         </button>
-
                     </div>
-
                 </div>
 
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- WHY CHOOSE US -->
-
     <section class="features" id="about">
-
         <div class="container">
-
             <div class="section-heading">
-
-                <h2>Why Choose FreshCart?</h2>
-
-                <p>
-                    We make grocery shopping easy, fresh and convenient.
-                </p>
-
+                <h2>Why Choose Vayudoot Store?</h2>
+                <p>We make grocery shopping easy, fresh and convenient.</p>
             </div>
 
             <div class="feature-grid">
-
                 <div class="feature">
-
-                    <div class="feature-icon">
-                        🥬
-                    </div>
-
+                    <div class="feature-icon">🥬</div>
                     <h3>Fresh & Quality</h3>
-
-                    <p>
-                        Carefully selected products for your family.
-                    </p>
-
+                    <p>Carefully selected products for your family.</p>
                 </div>
 
                 <div class="feature">
-
-                    <div class="feature-icon">
-                        🚚
-                    </div>
-
+                    <div class="feature-icon">🚚</div>
                     <h3>Fast Delivery</h3>
-
-                    <p>
-                        Get your groceries delivered quickly.
-                    </p>
-
+                    <p>Get your groceries delivered quickly.</p>
                 </div>
 
                 <div class="feature">
-
-                    <div class="feature-icon">
-                        💰
-                    </div>
-
+                    <div class="feature-icon">💰</div>
                     <h3>Best Prices</h3>
-
-                    <p>
-                        Great prices and exciting daily offers.
-                    </p>
-
+                    <p>Great prices and exciting daily offers.</p>
                 </div>
 
                 <div class="feature">
-
-                    <div class="feature-icon">
-                        🔒
-                    </div>
-
+                    <div class="feature-icon">🔒</div>
                     <h3>Secure Payment</h3>
-
-                    <p>
-                        Safe and secure checkout experience.
-                    </p>
-
+                    <p>Safe and secure checkout experience.</p>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- HOW IT WORKS -->
-
     <section>
-
         <div class="container">
-
             <div class="section-heading">
-
                 <h2>How It Works</h2>
-
-                <p>
-                    Get your groceries in just four simple steps.
-                </p>
-
+                <p>Get your groceries in just four simple steps.</p>
             </div>
 
             <div class="steps">
-
                 <div class="step">
-
-                    <div class="step-number">
-                        1
-                    </div>
-
+                    <div class="step-number">1</div>
                     <h3>Browse Products</h3>
-
-                    <p>
-                        Find your favorite groceries.
-                    </p>
-
+                    <p>Find your favorite groceries.</p>
                 </div>
 
                 <div class="step">
-
-                    <div class="step-number">
-                        2
-                    </div>
-
+                    <div class="step-number">2</div>
                     <h3>Add to Cart</h3>
-
-                    <p>
-                        Select your products and quantities.
-                    </p>
-
+                    <p>Select your products and quantities.</p>
                 </div>
 
                 <div class="step">
-
-                    <div class="step-number">
-                        3
-                    </div>
-
+                    <div class="step-number">3</div>
                     <h3>Secure Payment</h3>
-
-                    <p>
-                        Complete your order securely.
-                    </p>
-
+                    <p>Complete your order securely.</p>
                 </div>
 
                 <div class="step">
-
-                    <div class="step-number">
-                        4
-                    </div>
-
+                    <div class="step-number">4</div>
                     <h3>Fast Delivery</h3>
-
-                    <p>
-                        Enjoy convenient doorstep delivery.
-                    </p>
-
+                    <p>Enjoy convenient doorstep delivery.</p>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
-    <!-- SPECIAL DEAL -->
 
     <section id="offers">
-
         <div class="container">
-
             <div class="deal">
-
                 <h2>Weekend Grocery Sale</h2>
-
-                <p>
-                    Save up to 30% on selected grocery products.
-                </p>
-
-                <a href="#products" class="btn btn-light">
-                    Shop the Deals
-                </a>
-
+                <p>Save up to 30% on selected grocery products.</p>
+                <a href="#products" class="btn btn-light">Shop the Deals</a>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- TESTIMONIALS -->
-
     <section>
-
         <div class="container">
-
             <div class="section-heading">
-
                 <h2>What Our Customers Say</h2>
-
-                <p>
-                    Thousands of happy customers trust us for their groceries.
-                </p>
-
+                <p>Thousands of happy customers trust us for their groceries.</p>
             </div>
 
             <div class="testimonials">
-
                 <div class="testimonial">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        "The vegetables were fresh and delivery was faster than expected.
-                        I will definitely order again!"
-                    </p>
-
-                    <div class="customer">
-                        — Sarah M.
-                    </div>
-
+                    <div class="stars">★★★★★</div>
+                    <p>"The vegetables were fresh and delivery was faster than expected. I will definitely order again!"</p>
+                    <div class="customer">— Sarah M.</div>
                 </div>
 
                 <div class="testimonial">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        "Very easy to order and the prices are excellent.
-                        The quality of the products is great."
-                    </p>
-
-                    <div class="customer">
-                        — Michael R.
-                    </div>
-
+                    <div class="stars">★★★★★</div>
+                    <p>"Very easy to order and the prices are excellent. The quality of the products is great."</p>
+                    <div class="customer">— Michael R.</div>
                 </div>
 
                 <div class="testimonial">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        "Fresh groceries delivered directly to my home.
-                        This makes weekly shopping so much easier."
-                    </p>
-
-                    <div class="customer">
-                        — Emily K.
-                    </div>
-
+                    <div class="stars">★★★★★</div>
+                    <p>"Fresh groceries delivered directly to my home. This makes weekly shopping so much easier."</p>
+                    <div class="customer">— Emily K.</div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
-    <!-- NEWSLETTER -->
 
     <section>
-
         <div class="container">
-
             <div class="newsletter">
-
                 <h2>Get Fresh Deals in Your Inbox</h2>
-
-                <p>
-                    Subscribe to receive special offers and grocery deals.
-                </p>
+                <p>Subscribe to receive special offers and grocery deals.</p>
 
                 <form class="newsletter-form" onsubmit="subscribe(event)">
-
-                    <input type="email"
-                           placeholder="Enter your email address"
-                           required>
-
-                    <button class="btn btn-primary">
-                        Subscribe
-                    </button>
-
+                    <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
-
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- FOOTER -->
-
     <footer>
-
         <div class="container">
-
             <div class="footer-grid">
 
                 <div>
-
                     <div class="footer-logo">
-                        FreshCart
+                        <img src="images/logo.png" alt="Vayudoot Store Logo">
                     </div>
 
                     <p class="footer-about">
-                        Your trusted online grocery store for fresh products,
-                        everyday essentials and convenient home delivery.
+                        Your trusted online grocery store for fresh products, everyday essentials and convenient home delivery.
                     </p>
-
                 </div>
 
                 <div class="footer-column">
-
                     <h4>Quick Links</h4>
-
                     <a href="#home">Home</a>
                     <a href="#products">Shop</a>
                     <a href="#categories">Categories</a>
                     <a href="#offers">Offers</a>
-
                 </div>
 
                 <div class="footer-column">
-
                     <h4>Customer Support</h4>
-
                     <a href="#">Contact Us</a>
                     <a href="#">Shipping Policy</a>
                     <a href="#">Refund Policy</a>
                     <a href="#">FAQ</a>
-
                 </div>
 
                 <div class="footer-column">
-
                     <h4>Legal</h4>
-
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms & Conditions</a>
                     <a href="#">Cookie Policy</a>
-
                 </div>
-
             </div>
 
             <div class="copyright">
-
-                © 2026 FreshCart. All Rights Reserved.
-
+                © 2026 Vayudoot Store. All Rights Reserved.
             </div>
-
         </div>
-
     </footer>
 
-
-    <!-- CART PANEL -->
-
-    <div class="cart-panel" id="cartPanel">
+    <div class="cart-panel" id="cartPanel" aria-label="Shopping cart">
 
         <div class="cart-header">
-
             <h2>Your Cart</h2>
-
-            <button class="close-cart" onclick="closeCart()">
-                ×
-            </button>
-
+            <button class="close-cart" type="button" onclick="closeCart()" aria-label="Close cart">×</button>
         </div>
 
         <div id="cartItems">
-
-            <p style="padding:30px 0;color:#777;">
-                Your cart is empty.
-            </p>
-
+            <p style="padding:30px 0;color:#777;">Your cart is empty.</p>
         </div>
 
         <div class="cart-total">
-
             <span>Total</span>
-
-            <span id="cartTotal">
-                $0.00
-            </span>
-
+            <span id="cartTotal">₹0.00</span>
         </div>
 
-        <button class="btn btn-primary checkout">
+        <button class="btn btn-primary checkout" type="button" onclick="checkout()">
             Proceed to Checkout
         </button>
-
     </div>
 
-
-    <!-- JAVASCRIPT -->
-
     <script>
-
-    let cart = [];
-
-    function addToCart(name, price, button) {
-
-      cart.push({
-        name: name,
-        price: price
-      });
-
-      updateCart();
-
-      button.innerText = "✓ Added to Cart";
-
-      setTimeout(() => {
-
-        button.innerText = "Add to Cart";
-
-      }, 1500);
-
-    }
-
-
-    function updateCart() {
-
-      document.getElementById("cartCount").innerText =
-        cart.length;
-
-      const cartItems =
-        document.getElementById("cartItems");
-
-      const cartTotal =
-        document.getElementById("cartTotal");
-
-      if (cart.length === 0) {
-
-        cartItems.innerHTML =
-          '<p style="padding:30px 0;color:#777;">Your cart is empty.</p>';
-
-        cartTotal.innerText = "$0.00";
-
-        return;
-
-      }
-
-      let total = 0;
-
-      cartItems.innerHTML = "";
-
-      cart.forEach((item, index) => {
-
-        total += item.price;
-
-        const div =
-          document.createElement("div");
-
-        div.className = "cart-item";
-
-        div.innerHTML = `
-
-          <div class="cart-item-info">
-
-            <h4>${item.name}</h4>
-
-            <p>$${item.price.toFixed(2)}</p>
-
-          </div>
-
-          <button
-            onclick="removeItem(${index})"
-            style="
-              border:none;
-              background:none;
-              cursor:pointer;
-            "
-          >
-            ✕
-          </button>
-
-        `;
-
-        cartItems.appendChild(div);
-
-      });
-
-      cartTotal.innerText =
-        "$" + total.toFixed(2);
-
-    }
-
-
-    function removeItem(index) {
-
-      cart.splice(index, 1);
-
-      updateCart();
-
-    }
-
-
-    function openCart() {
-
-      document
-        .getElementById("cartPanel")
-        .classList.add("active");
-
-    }
-
-
-    function closeCart() {
-
-      document
-        .getElementById("cartPanel")
-        .classList.remove("active");
-
-    }
-
-
-    function subscribe(event) {
-
-      event.preventDefault();
-
-      alert(
-        "Thank you for subscribing to FreshCart!"
-      );
-
-      event.target.reset();
-
-    }
-
-
-    // PRODUCT SEARCH
-
-    document
-      .getElementById("searchInput")
-      .addEventListener("input", function() {
-
-        const search =
-          this.value.toLowerCase();
-
-        const products =
-          document.querySelectorAll(".product-card");
-
-        products.forEach(product => {
-
-          const name =
-            product
-              .getAttribute("data-name")
-              .toLowerCase();
-
-          if (name.includes(search)) {
-
-            product.style.display = "";
-
-          } else {
-
-            product.style.display = "none";
-
-          }
-
+        let cart = [];
+
+        function addToCart(name, price, button) {
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+
+            updateCart();
+
+            const originalText = button.innerText;
+            button.innerText = "✓ Added to Cart";
+
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 1500);
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById("cartCount");
+            const cartItems = document.getElementById("cartItems");
+            const cartTotal = document.getElementById("cartTotal");
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.innerText = totalItems;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML =
+                    '<p style="padding:30px 0;color:#777;">Your cart is empty.</p>';
+                cartTotal.innerText = "₹0.00";
+                return;
+            }
+
+            let total = 0;
+            cartItems.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+
+                const div = document.createElement("div");
+                div.className = "cart-item";
+
+                div.innerHTML = `
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>₹${item.price.toFixed(2)} × ${item.quantity}</p>
+
+                        <div class="quantity-controls">
+                            <button type="button" onclick="changeQuantity(${index}, -1)">−</button>
+                            <span>${item.quantity}</span>
+                            <button type="button" onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="remove-item"
+                        onclick="removeItem(${index})"
+                        aria-label="Remove ${item.name}"
+                    >
+                        ✕
+                    </button>
+                `;
+
+                cartItems.appendChild(div);
+            });
+
+            cartTotal.innerText = "₹" + total.toFixed(2);
+        }
+
+        function changeQuantity(index, change) {
+            if (!cart[index]) return;
+
+            cart[index].quantity += change;
+
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+
+            updateCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartPanel").classList.add("active");
+        }
+
+        function closeCart() {
+            document.getElementById("cartPanel").classList.remove("active");
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add products before checkout.");
+                return;
+            }
+
+            alert("Thank you for shopping with Vayudoot Store! Checkout integration can be connected to your payment and order system.");
+        }
+
+        function subscribe(event) {
+            event.preventDefault();
+
+            alert("Thank you for subscribing to Vayudoot Store!");
+
+            event.target.reset();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById("mobileNav").classList.toggle("active");
+        }
+
+        function closeMobileMenu() {
+            document.getElementById("mobileNav").classList.remove("active");
+        }
+
+        // PRODUCT SEARCH
+        document.getElementById("searchInput").addEventListener("input", function() {
+            const search = this.value.toLowerCase().trim();
+            const products = document.querySelectorAll(".product-card");
+            let visibleProducts = 0;
+
+            products.forEach(product => {
+                const name = product.getAttribute("data-name").toLowerCase();
+
+                if (name.includes(search)) {
+                    product.style.display = "";
+                    visibleProducts++;
+                } else {
+                    product.style.display = "none";
+                }
+            });
+
+            const existingMessage = document.querySelector(".no-results");
+            if (existingMessage) existingMessage.remove();
+
+            if (visibleProducts === 0) {
+                const message = document.createElement("div");
+                message.className = "no-results";
+                message.innerText = "No products found. Try another search.";
+                document.getElementById("productGrid").appendChild(message);
+            }
         });
 
-      });
-
-
-    // WISHLIST
-
-    document
-      .querySelectorAll(".wishlist")
-      .forEach(button => {
-
-        button.addEventListener("click", function() {
-
-          if (this.innerText === "♡") {
-
-            this.innerText = "♥";
-
-            this.style.color = "#e53935";
-
-          } else {
-
-            this.innerText = "♡";
-
-            this.style.color = "";
-
-          }
-
+        // WISHLIST
+        document.querySelectorAll(".wishlist").forEach(button => {
+            button.addEventListener("click", function() {
+                if (this.innerText === "♡") {
+                    this.innerText = "♥";
+                    this.style.color = "#e53935";
+                } else {
+                    this.innerText = "♡";
+                    this.style.color = "";
+                }
+            });
         });
-
-      });
-
     </script>
 
 </body>
